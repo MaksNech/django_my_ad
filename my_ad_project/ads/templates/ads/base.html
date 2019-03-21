@@ -1,0 +1,99 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Maks Nech">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Jquery core -->
+    <script src="{% static 'jquery/jquery-3.3.1.js' %}"></script>
+
+    <!-- Bootstrap core  -->
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <script src="{% static 'bootstrap/js/popper.min.js' %}"></script>
+
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <!-- Font-awesome styles  -->
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+
+    <!-- Custom styles for this template -->
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+    <link href="{% static 'ads/css/ads.css' %}" rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="navbar-brand">
+     <img class="img-fluid rounded float-left"  src="{% static 'ads/img/logo.png' %}" alt="">
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{% url 'index' %}">
+                    <i class="fa fa-home" aria-hidden="true"></i> Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="ad_dropdown" data-toggle="dropdown"
+                   aria-haspopup="true"
+                   aria-expanded="false"><i class="fa fa-audio-description" aria-hidden="true"></i> Ads</a>
+                <div class="dropdown-menu" aria-labelledby="ad_dropdown">
+                    <a class="dropdown-item" href="">
+                        <i class="fa fa-th-list" aria-hidden="true"></i> List all</a>
+                    <a class="dropdown-item" href="">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Add new</a>
+                </div>
+            </li>
+
+        </ul>
+        {% block search %}{% endblock %}
+
+    </div>
+</nav>
+
+<main role="main">
+    {% block jumbotron %}{% endblock %}
+
+    {% block carousel %}{% endblock %}
+
+    {% block content %}{% endblock %}
+    <hr>
+</main>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; Copyright 2019 by Maksym Nechypurenko</p>
+    <ul class="list-inline">
+        <li class="list-inline-item"><a href="#">Privacy</a></li>
+        <li class="list-inline-item"><a href="#">Terms</a></li>
+        <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+</footer>
+
+</body>
+
+</html>
+
+

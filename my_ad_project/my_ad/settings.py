@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mptt',
+
+    'ads',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +78,12 @@ WSGI_APPLICATION = 'my_ad.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'my_ad_db',
+        'USER': 'admin',
+        'PASSWORD': '123',
+        'HOST': '127.0.0.1',
+        'PORT': 5432
     }
 }
 
@@ -117,4 +124,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+# Mptt
+ROOT = os.path.abspath(os.path.dirname(__file__))
+
+path = lambda *args: os.path.join(ROOT, *args)
+
+MPTT_ADMIN_LEVEL_INDENT = 20
+
+FEINCMS_ADMIN_MEDIA = '/static/feincms/'
+
+FEINCMS_ADMIN_MEDIA_LOCATION = path('static/feincms/')
+
+
