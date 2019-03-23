@@ -1,0 +1,242 @@
+[
+  {
+    "pk": 1,
+    "model": "ads.category",
+    "fields": {
+      "rght": 8,
+      "name": "Animals",
+      "parent": null,
+      "level": 0,
+      "lft": 1,
+      "tree_id": 1
+    }
+  },
+  {
+    "pk": 2,
+    "model": "ads.category",
+    "fields": {
+      "rght": 3,
+      "name": "Cats",
+      "parent": 1,
+      "level": 1,
+      "lft": 2,
+      "tree_id": 1
+    }
+  },
+  {
+    "pk": 3,
+    "model": "ads.category",
+    "fields": {
+      "rght": 5,
+      "name": "Dogs",
+      "parent": 1,
+      "level": 1,
+      "lft": 4,
+      "tree_id": 1
+    }
+  },
+  {
+    "pk": 4,
+    "model": "ads.category",
+    "fields": {
+      "rght": 7,
+      "name": "Birds",
+      "parent": 1,
+      "level": 1,
+      "lft": 6,
+      "tree_id": 1
+    }
+  },
+  {
+    "pk": 5,
+    "model": "ads.category",
+    "fields": {
+      "rght": 8,
+      "name": "Electronics",
+      "parent": null,
+      "level": 0,
+      "lft": 1,
+      "tree_id": 2
+    }
+  },
+  {
+    "pk": 6,
+    "model": "ads.category",
+    "fields": {
+      "rght": 3,
+      "name": "Сomputers",
+      "parent": 1,
+      "level": 1,
+      "lft": 2,
+      "tree_id": 2
+    }
+  },
+  {
+    "pk": 7,
+    "model": "ads.category",
+    "fields": {
+      "rght": 5,
+      "name": "Smartphones",
+      "parent": 1,
+      "level": 1,
+      "lft": 4,
+      "tree_id": 2
+    }
+  },
+  {
+    "pk": 8,
+    "model": "ads.category",
+    "fields": {
+      "rght": 7,
+      "name": "Appliances",
+      "parent": 1,
+      "level": 1,
+      "lft": 6,
+      "tree_id": 2
+    }
+  },
+  {
+    "pk": 9,
+    "model": "ads.category",
+    "fields": {
+      "rght": 8,
+      "name": "Real estate",
+      "parent": null,
+      "level": 0,
+      "lft": 1,
+      "tree_id": 3
+    }
+  },
+  {
+    "pk": 10,
+    "model": "ads.category",
+    "fields": {
+      "rght": 3,
+      "name": "Land plots",
+      "parent": 1,
+      "level": 1,
+      "lft": 2,
+      "tree_id": 3
+    }
+  },
+  {
+    "pk": 11,
+    "model": "ads.category",
+    "fields": {
+      "rght": 5,
+      "name": "Houses",
+      "parent": 1,
+      "level": 1,
+      "lft": 4,
+      "tree_id": 3
+    }
+  },
+  {
+    "pk": 12,
+    "model": "ads.category",
+    "fields": {
+      "rght": 7,
+      "name": "Apartments",
+      "parent": 1,
+      "level": 1,
+      "lft": 6,
+      "tree_id": 3
+    }
+  },
+  {
+    "pk": 13,
+    "model": "ads.category",
+    "fields": {
+      "rght": 8,
+      "name": "Transport",
+      "parent": null,
+      "level": 0,
+      "lft": 1,
+      "tree_id": 4
+    }
+  },
+  {
+    "pk": 14,
+    "model": "ads.category",
+    "fields": {
+      "rght": 3,
+      "name": "Trucks",
+      "parent": 1,
+      "level": 1,
+      "lft": 2,
+      "tree_id": 4
+    }
+  },
+  {
+    "pk": 15,
+    "model": "ads.category",
+    "fields": {
+      "rght": 5,
+      "name": "Сars",
+      "parent": 1,
+      "level": 1,
+      "lft": 4,
+      "tree_id": 4
+    }
+  },
+  {
+    "pk": 16,
+    "model": "ads.category",
+    "fields": {
+      "rght": 7,
+      "name": "Motorcycles",
+      "parent": 1,
+      "level": 1,
+      "lft": 6,
+      "tree_id": 4
+    }
+  },
+  {
+    "pk": 17,
+    "model": "ads.category",
+    "fields": {
+      "rght": 8,
+      "name": "Hobby and Sport",
+      "parent": null,
+      "level": 0,
+      "lft": 1,
+      "tree_id": 5
+    }
+  },
+  {
+    "pk": 18,
+    "model": "ads.category",
+    "fields": {
+      "rght": 3,
+      "name": "Bicycles",
+      "parent": 1,
+      "level": 1,
+      "lft": 2,
+      "tree_id": 5
+    }
+  },
+  {
+    "pk": 19,
+    "model": "ads.category",
+    "fields": {
+      "rght": 5,
+      "name": "Sportswear",
+      "parent": 1,
+      "level": 1,
+      "lft": 4,
+      "tree_id": 5
+    }
+  },
+  {
+    "pk": 20,
+    "model": "ads.category",
+    "fields": {
+      "rght": 7,
+      "name": "Fishing gears",
+      "parent": 1,
+      "level": 1,
+      "lft": 6,
+      "tree_id": 5
+    }
+  }
+]

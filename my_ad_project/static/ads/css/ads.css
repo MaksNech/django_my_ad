@@ -14,13 +14,47 @@ body {
     line-height: 1.25;
 }
 
-
 .card .card-img-top {
-    height: 25rem;
+    height: 18rem;
 }
 
 .navbar-brand .img-fluid {
     max-width:100px;
     height: 50px;
 }
+
+.nav-item a {
+    font-size: 20px;
+}
+
+// Pagination styles ////////////////////////////////////
+
+.page-link {
+    background-color: #FFFFFF;
+    color: #343A40;
+}
+
+.pagination-number {
+    background-color: #FFFFFF;
+    color: #343A40;
+}
+
+.pagination-current {
+    background-color: #343A40;
+    color: #DC3545;
+}
+
+.pagination-action {
+    background-color: #343A40;
+    color: #DC3545;
+}
+
+.pagination-action:hover, .pagination-previous, .pagination-next, .pagination-number:hover {
+    background-color: #1b1e21;
+    color: #DC3545;
+}
+
+/////////////////////////////////////////////////////////
+
+
 

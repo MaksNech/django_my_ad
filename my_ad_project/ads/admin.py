@@ -24,6 +24,6 @@ class AdAdmin(admin.ModelAdmin):
 
 @admin.register(Image)
 class ImageAdmin(admin.ModelAdmin):
-    list_display = ('img',)
+    list_display = ('img', 'ad')
     list_filter = ('ad__category__name',)
     search_fields = ('img',)

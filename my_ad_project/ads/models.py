@@ -15,7 +15,7 @@ class Category(MPTTModel):
     class MPTTMeta:
         order_insertion_by = ['name']
 
-    
+
 class Ad(models.Model):
     title = models.CharField(max_length=100)
     category = TreeForeignKey('Category', on_delete=models.CASCADE, related_name='ads')
@@ -26,6 +26,7 @@ class Ad(models.Model):
     negotiable_price = models.BooleanField(default=False, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ads')
     created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return "{} | {} | {}".format(self.title, self.author, self.created_on)

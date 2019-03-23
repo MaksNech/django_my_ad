@@ -3,190 +3,197 @@
 
 {% block jumbotron %}
 <div class="jumbotron">
-
     <h1 class="display-4">Welcome to "My Ad" app!</h1>
     <p class="h2">Here you can create your own ad for free."</p>
-
 </div>
 {% endblock %}
 {% block carousel %}
-{% if dishes.8.name %}
+{% if ads.8 %}
 <div class="album py-5 bg-dark">
-<div class="container">
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-        <!--First slide-->
-        <div class="carousel-item active">
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <!--First slide-->
+                <div class="carousel-item active">
 
-            <div class="row">
+                    <div class="row">
 
-                <div class="col-md-12">
+                        <div class="col-md-12">
 
-                    <div class="card-deck">
-                        <div class="card text-white bg-secondary border-light">
-                            {% if dishes.0.img %}
-                            <img class="card-img-top" src="{{ dishes.0.img.url }}" alt="Card image cap">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ dishes.0.name }}</h5>
-                                <p class="card-text">{{ dishes.0.description }}</p>
+                            <div class="card-deck">
+                                <div class="card text-white bg-secondary border-light">
+                                    {% if ads.0.img.url %}
+                                    <img class="card-img-top" src="{{ ads.0.img.url }}" alt="Card image cap">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ ads.0.title }}</h5>
+                                        <p class="card-text"><i class="fa fa-star-o" aria-hidden="true">
+                                        </i> Category: {{ ads.0.category.name }}</p>
+                                    </div>
+                                    <div class="card-footer text-white bg-dark">
+                                        <small class="text-muted">Latest updates</small>
+                                    </div>
+                                </div>
+                                <div class="card text-white bg-secondary border-light">
+                                    {% if ads.1.img.url %}
+                                    <img class="card-img-top" src="{{ ads.1.img.url }}" alt="Card image cap">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ ads.1.title }}</h5>
+                                        <p class="card-text"><i class="fa fa-star-o" aria-hidden="true">
+                                        </i> Category: {{ ads.1.category.name }}</p>
+                                    </div>
+                                    <div class="card-footer text-white bg-dark">
+                                        <small class="text-muted">Latest updates</small>
+                                    </div>
+                                </div>
+                                <div class="card text-white bg-secondary border-light">
+                                    {% if ads.2.img.url %}
+                                    <img class="card-img-top" src="{{ ads.2.img.url }}" alt="Card image cap">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ ads.2.title }}</h5>
+                                        <p class="card-text"><i class="fa fa-star-o" aria-hidden="true">
+                                        </i> Category: {{ ads.2.category.name }}</p>
+                                    </div>
+                                    <div class="card-footer text-white bg-dark">
+                                        <small class="text-muted">Latest updates</small>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-footer text-white bg-dark">
-                                <small class="text-muted">Latest updates</small>
-                            </div>
+
                         </div>
-                        <div class="card text-white bg-secondary border-light">
-                            {% if dishes.1.img %}
-                            <img class="card-img-top" src="{{ dishes.1.img.url }}" alt="Card image cap">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ dishes.1.name }}</h5>
-                                <p class="card-text">{{ dishes.1.description }}</p>
-                            </div>
-                            <div class="card-footer text-white bg-dark">
-                                <small class="text-muted">Latest updates</small>
-                            </div>
-                        </div>
-                        <div class="card text-white bg-secondary border-light">
-                            {% if dishes.2.img %}
-                            <img class="card-img-top" src="{{ dishes.2.img.url }}" alt="Card image cap">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ dishes.2.name }}</h5>
-                                <p class="card-text">{{ dishes.2.description }}</p>
-                            </div>
-                            <div class="card-footer text-white bg-dark">
-                                <small class="text-muted">Latest updates</small>
-                            </div>
-                        </div>
+
                     </div>
 
                 </div>
+                <!--/.First slide-->
 
-            </div>
+                <!--Second slide-->
+                <div class="carousel-item">
+                    <div class="row">
 
-        </div>
-        <!--/.First slide-->
+                        <div class="col-md-12">
 
-        <!--Second slide-->
-        <div class="carousel-item">
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <div class="card-deck">
-                        <div class="card text-white bg-secondary border-light">
-                            {% if dishes.3.img %}
-                            <img class="card-img-top" src="{{ dishes.3.img.url }}" alt="Card image cap">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ dishes.3.name }}</h5>
-                                <p class="card-text">{{ dishes.3.description }}</p>
+                            <div class="card-deck">
+                                <div class="card text-white bg-secondary border-light">
+                                    {% if ads.3.img.url %}
+                                    <img class="card-img-top" src="{{ ads.3.img.url }}" alt="Card image cap">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ ads.3.title }}</h5>
+                                        <p class="card-text"><i class="fa fa-star-o" aria-hidden="true">
+                                        </i> Category: {{ ads.3.category.name }}</p>
+                                    </div>
+                                    <div class="card-footer text-white bg-dark">
+                                        <small class="text-muted">Latest updates</small>
+                                    </div>
+                                </div>
+                                <div class="card text-white bg-secondary border-light">
+                                    {% if ads.4.img.url %}
+                                    <img class="card-img-top" src="{{ ads.4.img.url }}" alt="Card image cap">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ ads.4.title }}</h5>
+                                        <p class="card-text"><i class="fa fa-star-o" aria-hidden="true">
+                                        </i> Category: {{ ads.4.category.name }}</p>
+                                    </div>
+                                    <div class="card-footer text-white bg-dark">
+                                        <small class="text-muted">Latest updates</small>
+                                    </div>
+                                </div>
+                                <div class="card text-white bg-secondary border-light">
+                                    {% if ads.5.img.url %}
+                                    <img class="card-img-top" src="{{ ads.5.img.url }}" alt="Card image cap">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ ads.5.title }}</h5>
+                                        <p class="card-text"><i class="fa fa-star-o" aria-hidden="true">
+                                        </i> Category: {{ ads.5.category.name }}</p>
+                                    </div>
+                                    <div class="card-footer text-white bg-dark">
+                                        <small class="text-muted">Latest updates</small>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-footer text-white bg-dark">
-                                <small class="text-muted">Latest updates</small>
-                            </div>
+
                         </div>
-                        <div class="card text-white bg-secondary border-light">
-                            {% if dishes.4.img %}
-                            <img class="card-img-top" src="{{ dishes.4.img.url }}" alt="Card image cap">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ dishes.4.name }}</h5>
-                                <p class="card-text">{{ dishes.4.description }}</p>
-                            </div>
-                            <div class="card-footer text-white bg-dark">
-                                <small class="text-muted">Latest updates</small>
-                            </div>
-                        </div>
-                        <div class="card text-white bg-secondary border-light">
-                            {% if dishes.5.img %}
-                            <img class="card-img-top" src="{{ dishes.5.img.url }}" alt="Card image cap">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ dishes.5.name }}</h5>
-                                <p class="card-text">{{ dishes.5.description }}</p>
-                            </div>
-                            <div class="card-footer text-white bg-dark">
-                                <small class="text-muted">Latest updates</small>
-                            </div>
-                        </div>
+
                     </div>
 
                 </div>
+                <!--/.Second slide-->
 
-            </div>
+                <!--Third slide-->
+                <div class="carousel-item">
+                    <div class="row">
 
-        </div>
-        <!--/.Second slide-->
+                        <div class="col-md-12">
 
-        <!--Third slide-->
-        <div class="carousel-item">
-            <div class="row">
-
-                <div class="col-md-12">
-
-                    <div class="card-deck">
-                        <div class="card text-white bg-secondary border-light">
-                            {% if dishes.6.img %}
-                            <img class="card-img-top" src="{{ dishes.6.img.url }}" alt="Card image cap">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ dishes.6.name }}</h5>
-                                <p class="card-text">{{ dishes.6.description }}</p>
+                            <div class="card-deck">
+                                <div class="card text-white bg-secondary border-light">
+                                    {% if ads.6.img.url %}
+                                    <img class="card-img-top" src="{{ ads.6.img.url }}" alt="Card image cap">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ ads.6.title }}</h5>
+                                        <p class="card-text"><i class="fa fa-star-o" aria-hidden="true">
+                                        </i> Category: {{ ads.6.category.name }}</p>
+                                    </div>
+                                    <div class="card-footer text-white bg-dark">
+                                        <small class="text-muted">Latest updates</small>
+                                    </div>
+                                </div>
+                                <div class="card text-white bg-secondary border-light">
+                                    {% if ads.7.img.url %}
+                                    <img class="card-img-top" src="{{ ads.7.img.url }}" alt="Card image cap">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ ads.7.title }}</h5>
+                                        <p class="card-text"><i class="fa fa-star-o" aria-hidden="true">
+                                        </i> Category: {{ ads.7.category.name }}</p>
+                                    </div>
+                                    <div class="card-footer text-white bg-dark">
+                                        <small class="text-muted">Latest updates</small>
+                                    </div>
+                                </div>
+                                <div class="card text-white bg-secondary border-light">
+                                    {% if ads.8.img.url %}
+                                    <img class="card-img-top" src="{{ ads.8.img.url }}" alt="Card image cap">
+                                    {% endif %}
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ ads.8.title }}</h5>
+                                        <p class="card-text"><i class="fa fa-star-o" aria-hidden="true">
+                                        </i> Category: {{ ads.8.category.name }}</p>
+                                    </div>
+                                    <div class="card-footer text-white bg-dark">
+                                        <small class="text-muted">Latest updates</small>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-footer text-white bg-dark">
-                                <small class="text-muted">Latest updates</small>
-                            </div>
+
                         </div>
-                        <div class="card text-white bg-secondary border-light">
-                            {% if dishes.7.img %}
-                            <img class="card-img-top" src="{{ dishes.7.img.url }}" alt="Card image cap">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ dishes.7.name }}</h5>
-                                <p class="card-text">{{ dishes.7.description }}</p>
-                            </div>
-                            <div class="card-footer text-white bg-dark">
-                                <small class="text-muted">Latest updates</small>
-                            </div>
-                        </div>
-                        <div class="card text-white bg-secondary border-light">
-                            {% if dishes.8.img %}
-                            <img class="card-img-top" src="{{ dishes.8.img.url }}" alt="Card image cap">
-                            {% endif %}
-                            <div class="card-body">
-                                <h5 class="card-title">{{ dishes.8.name }}</h5>
-                                <p class="card-text">{{ dishes.8.description }}</p>
-                            </div>
-                            <div class="card-footer text-white bg-dark">
-                                <small class="text-muted">Latest updates</small>
-                            </div>
-                        </div>
+
                     </div>
 
                 </div>
-
+                <!--/.Third slide-->
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-
         </div>
-        <!--/.Third slide-->
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
     </div>
-</div>
-</div>
 </div>
 {% endif %}
 {% endblock %}

@@ -1,0 +1,422 @@
+[
+  {
+    "model": "ads.ad",
+    "pk": 1,
+    "fields": {
+      "title": "Selling british kitten",
+      "category": 2,
+      "description": "little kitty waiting for his family",
+      "img_count": 2,
+      "price": "3000.00",
+      "negotiable_price": false,
+      "author": 3,
+      "created_on": "2019-03-22T14:04:21.512Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 2,
+    "fields": {
+      "title": "British cat",
+      "category": 2,
+      "description": "Adult british cat \"Whisky\"",
+      "img_count": 2,
+      "price": "2000.00",
+      "negotiable_price": false,
+      "author": 2,
+      "created_on": "2019-03-22T14:05:56.085Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 3,
+    "fields": {
+      "title": "I will sell Shiba Inu",
+      "category": 3,
+      "description": "Friend for all family",
+      "img_count": 2,
+      "price": "5000.00",
+      "negotiable_price": false,
+      "author": 3,
+      "created_on": "2019-03-22T14:07:33.684Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 4,
+    "fields": {
+      "title": "Labrador",
+      "category": 3,
+      "description": "Labrador Jordi",
+      "img_count": 2,
+      "price": "4500.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:08:45.445Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 5,
+    "fields": {
+      "title": "Bonny parrot",
+      "category": 4,
+      "description": "The best singer in the country",
+      "img_count": 2,
+      "price": "1600.00",
+      "negotiable_price": false,
+      "author": 3,
+      "created_on": "2019-03-22T14:11:12.668Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 6,
+    "fields": {
+      "title": "\u0421anary",
+      "category": 4,
+      "description": "Bird canary for home",
+      "img_count": 2,
+      "price": "700.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:12:53.465Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 7,
+    "fields": {
+      "title": "Asus VivoBook",
+      "category": 6,
+      "description": "HD / Intel Celeron N4000 1.1 - 2.6  / RAM 4  / HDD 500  / Intel UHD Graphics 600  / Wi-Fi / Bluetooth / Endless OS /",
+      "img_count": 2,
+      "price": "8900.00",
+      "negotiable_price": false,
+      "author": 2,
+      "created_on": "2019-03-22T14:16:35.222Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 8,
+    "fields": {
+      "title": "Dell Inspiron",
+      "category": 6,
+      "description": "WXGA HD / Intel Celeron N4000 1.1 - 2.6  / RAM 4  / HDD 500  / Intel UHD Graphics 600 / DVD\u00b1RW / Wi-Fi / Bluetooth  / Windows 10 Home /",
+      "img_count": 2,
+      "price": "13900.00",
+      "negotiable_price": false,
+      "author": 3,
+      "created_on": "2019-03-22T14:18:19.231Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 9,
+    "fields": {
+      "title": "Xiaomi Redmi Note 5",
+      "category": 7,
+      "description": "5.99\", IPS, 2160x1080/ Qualcomm Snapdragon 636 1.8 / Cam 12 + 13 Mp/ RAM 4 /  microSD / 3G/ LTE/ GPS/ GLONASS/ 2\u0445 SIM (Nano-SIM)/ Android 8.1 Oreo/",
+      "img_count": 2,
+      "price": "5400.00",
+      "negotiable_price": false,
+      "author": 2,
+      "created_on": "2019-03-22T14:20:57.793Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 10,
+    "fields": {
+      "title": "Samsung Galaxy",
+      "category": 7,
+      "description": "6.4\", Super AMOLED, 2340x1080 / Samsung Exynos 7904 2x1.8  + 6x1.6 / Cam 16 + 16 Mp/ RAM 3 /  microSD / 3G/ LTE/ GPS/  2\u0445 SIM (Nano-SIM)/ Android 9.0 /",
+      "img_count": 2,
+      "price": "8100.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:23:33.517Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 11,
+    "fields": {
+      "title": "fridge Side-by-Side SKYWORTH",
+      "category": 8,
+      "description": "181 \u0445 91 \u0445 66 sm; 86 kg",
+      "img_count": 2,
+      "price": "11300.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:25:54.032Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 12,
+    "fields": {
+      "title": "microwave SAMSUNG",
+      "category": 8,
+      "description": "900 Vt; 31 x 51.7 x 47.56 \u0441\u043c",
+      "img_count": 2,
+      "price": "12700.00",
+      "negotiable_price": false,
+      "author": 2,
+      "created_on": "2019-03-22T14:27:43.467Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 13,
+    "fields": {
+      "title": "Land Plot James street",
+      "category": 10,
+      "description": "100x100 sq m.",
+      "img_count": 2,
+      "price": "500000.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:29:09.963Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 14,
+    "fields": {
+      "title": "Land Plot Winner street",
+      "category": 10,
+      "description": "300 x 40 sq m",
+      "img_count": 2,
+      "price": "430000.00",
+      "negotiable_price": false,
+      "author": 3,
+      "created_on": "2019-03-22T14:30:16.106Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 15,
+    "fields": {
+      "title": "House Lambert street",
+      "category": 11,
+      "description": "500 sq m, 7 rooms",
+      "img_count": 2,
+      "price": "670000.00",
+      "negotiable_price": false,
+      "author": 2,
+      "created_on": "2019-03-22T14:31:22.839Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 16,
+    "fields": {
+      "title": "House Kleenwood street",
+      "category": 11,
+      "description": "300 sq m, 5 rooms",
+      "img_count": 2,
+      "price": "450000.00",
+      "negotiable_price": false,
+      "author": 3,
+      "created_on": "2019-03-22T14:32:10.039Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 17,
+    "fields": {
+      "title": "Apartments Melrouse street",
+      "category": 12,
+      "description": "80 sq m, 3 rooms",
+      "img_count": 2,
+      "price": "320000.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:33:31.309Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 18,
+    "fields": {
+      "title": "Apartments Enlishband street",
+      "category": 12,
+      "description": "120 sq m, 4 rooms",
+      "img_count": 2,
+      "price": "150000.00",
+      "negotiable_price": false,
+      "author": 2,
+      "created_on": "2019-03-22T14:34:27.895Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 19,
+    "fields": {
+      "title": "Volvo",
+      "category": 14,
+      "description": "2016 year, 400 hp",
+      "img_count": 2,
+      "price": "330000.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:35:28.361Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 20,
+    "fields": {
+      "title": "Kamaz",
+      "category": 14,
+      "description": "2012 year, 350 h.p.",
+      "img_count": 2,
+      "price": "120000.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:36:17.147Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 21,
+    "fields": {
+      "title": "Bmw m5",
+      "category": 15,
+      "description": "2016 year, 400 hp",
+      "img_count": 2,
+      "price": "230000.00",
+      "negotiable_price": false,
+      "author": 2,
+      "created_on": "2019-03-22T14:37:13.569Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 22,
+    "fields": {
+      "title": "Lexus",
+      "category": 15,
+      "description": "2017 year 320 hp",
+      "img_count": 2,
+      "price": "268000.00",
+      "negotiable_price": false,
+      "author": 3,
+      "created_on": "2019-03-22T14:37:59.976Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 23,
+    "fields": {
+      "title": "Suzuki",
+      "category": 16,
+      "description": "2019 year, 190 hp",
+      "img_count": 2,
+      "price": "80000.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:38:52.019Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 24,
+    "fields": {
+      "title": "Honda",
+      "category": 16,
+      "description": "2015 year, 220 hp",
+      "img_count": 2,
+      "price": "56000.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:39:27.677Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 25,
+    "fields": {
+      "title": "Bicycle new",
+      "category": 18,
+      "description": "2019 year, 9 speeds",
+      "img_count": 2,
+      "price": "14000.00",
+      "negotiable_price": false,
+      "author": 3,
+      "created_on": "2019-03-22T14:40:36.120Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 26,
+    "fields": {
+      "title": "Sale bicycle",
+      "category": 18,
+      "description": "Best bicycle for ever 2018",
+      "img_count": 2,
+      "price": "12000.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:41:27.087Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 27,
+    "fields": {
+      "title": "Adidas suit",
+      "category": 19,
+      "description": "model 2019",
+      "img_count": 2,
+      "price": "2500.00",
+      "negotiable_price": false,
+      "author": 2,
+      "created_on": "2019-03-22T14:42:13.412Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 28,
+    "fields": {
+      "title": "Reebok shoes",
+      "category": 19,
+      "description": "model 2018",
+      "img_count": 2,
+      "price": "1700.00",
+      "negotiable_price": false,
+      "author": 3,
+      "created_on": "2019-03-22T14:43:00.889Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 29,
+    "fields": {
+      "title": "Fishing rod",
+      "category": 20,
+      "description": "model 2018",
+      "img_count": 2,
+      "price": "4500.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:44:08.139Z"
+    }
+  },
+  {
+    "model": "ads.ad",
+    "pk": 30,
+    "fields": {
+      "title": "New fishing rod",
+      "category": 20,
+      "description": "model 2019",
+      "img_count": 2,
+      "price": "4000.00",
+      "negotiable_price": false,
+      "author": 4,
+      "created_on": "2019-03-22T14:44:55.312Z"
+    }
+  }
+]

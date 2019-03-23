@@ -82,4 +82,9 @@ python manage.py makemigrations
 
 python manage.py migrate
 ```
+### Users:
+#### Admin: ( username: "admin"; password: "123" ) 
+#### Max: ( username: "Max"; password: "12345678max" )
+#### John: ( username: "John"; password: "12345678john" )
+#### Alex: ( username: "Alex"; password: "12345678alex" )  
 

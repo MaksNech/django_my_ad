@@ -1,0 +1,102 @@
+{% extends "ads/base.html" %}
+{% load mptt_tags %}
+{% block title %}Ads-List{% endblock %}
+{% block search %}
+<form class="form-inline my-2 my-lg-0" action="{% url 'list' %}" method="GET">
+    <input required class="form-control mr-sm-2" type="text" placeholder="search" aria-label="search"
+           name="query" value="{{ query }}">
+    <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">search</button>
+</form>
+{% endblock %}
+{% block content %}
+
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="text-center">
+            <h2>Ads</h2>
+        </div>
+
+        <div class="row">
+            {% if ads %}
+            <div class="col-md-12">
+                {% if is_paginated %}
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+
+
+                        {% if ads.has_previous %}
+                        <li class="page-item"><a class="page-link pagination-action" href="?page=1">
+                            <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+                        </a></li>
+                        <li class="page-item"><a class="page-link pagination-action"
+                                                 href="?page={{ ads.previous_page_number }}">
+                            <i class="fa fa-angle-left" aria-hidden="true"></i>
+                        </a></li>
+                        {% endif %}
+
+                        {% for num in ads.paginator.page_range %}
+
+                        {% if ads.number == num %}
+                        <span class="page-link pagination-number pagination-current">{{ num }}</span>
+                        {% elif num > ads.number|add:'-3' and num < ads.number|add:'3' %}
+                        <li class="page-item">
+                            <a class="page-link pagination-number" href="?page={{ num }}">{{ num }}</a></li>
+                        {% endif %}
+
+                        {% endfor %}
+
+                        {% if ads.has_next %}
+                        <li class="page-item"><a class="page-link pagination-action"
+                                                 href="?page={{ ads.next_page_number }}">
+                            <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        </a></li>
+                        <li class="page-item"><a class="page-link pagination-action"
+                                                 href="?page={{ ads.paginator.num_pages }}">
+                            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                        </a></li>
+                        {% endif %}
+
+                    </ul>
+                </nav>
+                {% endif %}
+            </div>
+
+            {% for obj in ads %}
+            <div class="col-md-6">
+                <div class="card mb-4 shadow-sm">
+                    {% if obj.img.url %}
+                    <img class="card-img-top" src="{{ obj.img.url }}" alt="Card image cap">
+                    {% endif %}
+                    <div class="card-body">
+                        <h4 class="card-title">{{ obj.ad.title }}</h4>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <a href="{% url 'detail' obj.ad.id %}"
+                                   class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">
+                                    <i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                <a href=""
+                                   class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">
+                                    <i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
+                            </div>
+                        </div>
+                        <!--<span style="white-space: pre-line">{{ ad.description }}</span>-->
+                        <hr>
+                        <p>
+                            <small class="text-muted">Author: {{ obj.ad.author }}</small>
+                            <br>
+                            <small class="text-muted">Created: {{ obj.ad.created_on }}</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>No ads match your search criteria.</p>
+            {% endif %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+

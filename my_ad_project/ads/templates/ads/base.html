@@ -59,9 +59,9 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="ad_dropdown" data-toggle="dropdown"
                    aria-haspopup="true"
-                   aria-expanded="false"><i class="fa fa-audio-description" aria-hidden="true"></i> Ads</a>
+                   aria-expanded="false"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Ads</a>
                 <div class="dropdown-menu" aria-labelledby="ad_dropdown">
-                    <a class="dropdown-item" href="">
+                    <a class="dropdown-item" href="{% url 'list' %}">
                         <i class="fa fa-th-list" aria-hidden="true"></i> List all</a>
                     <a class="dropdown-item" href="">
                         <i class="fa fa-plus" aria-hidden="true"></i> Add new</a>
@@ -80,7 +80,6 @@
     {% block carousel %}{% endblock %}
 
     {% block content %}{% endblock %}
-    <hr>
 </main>
 
 <footer class="my-5 pt-5 text-muted text-center text-small">
