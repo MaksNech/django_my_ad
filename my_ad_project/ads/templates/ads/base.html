@@ -51,6 +51,29 @@
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="authentication_dropdown" data-toggle="dropdown"
+                   aria-haspopup="true"
+                   aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i>
+                    {% if user.is_authenticated %}
+                    {{user.username}}
+                    {% else %}
+                    Auth
+                    {% endif %}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="note_dropdown">
+                    <a class="dropdown-item" href="{% url 'register' %}">
+                        <i class="fa fa-user-plus" aria-hidden="true"></i> Register</a>
+                    {% if not user.is_authenticated %}
+                    <a class="dropdown-item" href="{% url 'login' %}">
+                        <i class="fa fa-sign-in" aria-hidden="true"></i> Login</a>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <a class="dropdown-item" href="{% url 'logout' %}">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                    {% endif %}
+                </div>
+            </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'index' %}">
                     <i class="fa fa-home" aria-hidden="true"></i> Home</a>

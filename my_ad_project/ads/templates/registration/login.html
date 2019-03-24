@@ -1,0 +1,38 @@
+{% extends "ads/base.html" %}
+{% block title %}Ads-Login{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>User Login Form</h2>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-xs-12">
+            <form class="form-signin" id="login_form" action="{% url 'login' %}"
+                  method="post">
+                {% csrf_token %}
+                <h1 class="h3 mb-3 font-weight-normal">Please to login:</h1>
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">{{form.non_field_errors}}</div>
+                {% endif %}
+                <label for="login_name">User Name</label>
+                <input type="text" id="login_name" name="{{ form.username.name }}" class="form-control"
+                       placeholder="User Name" required>
+                <label for="login_password">User Password</label>
+                <input type="password" id="login_password" name="{{ form.password.name }}" class="form-control"
+                       placeholder="User Password" required>
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-primary btn-block" type="submit" form="login_form">
+                    Login
+                </button>
+                <input type="hidden" name="next" value="{{ next }}">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

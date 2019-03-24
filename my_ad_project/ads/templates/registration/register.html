@@ -1,0 +1,54 @@
+{% extends "ads/base.html" %}
+{% block title %}Ads-Registration{% endblock %}
+{% block content %}
+
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>User Registration Form</h2>
+        <p class="lead">Below is a form in which you can register a new user.</p>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-xs-12 col-centered">
+            <hr class="mb-4">
+            <p class="text-muted">Required Field *</p>
+            <form class="needs-validation" id="register_form" action="{% url 'register' %}"
+                  method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                <div class="alert alert-danger" role="alert">{{form.non_field_errors}}</div>
+                {% endif %}
+                {% if form.username.errors %}
+                <div class="alert alert-danger" role="alert">{{form.username.errors}}</div>
+                {% endif %}
+                <div class="mb-3">
+                    <label for="register_name">User Name *</label>
+                    <input type="text" id="register_name" name="{{ form.username.name }}" class="form-control"
+                           placeholder="User Name" required>
+                </div>
+                {% if form.password1.errors %}
+                <div class="alert alert-danger" role="alert">{{form.password1.errors}}</div>
+                {% endif %}
+                <div class="mb-3">
+                    <label for="register_password">User Password *</label>
+                    <input type="password" id="register_password" name="{{ form.password1.name }}" class="form-control"
+                           placeholder="User Password" required>
+                </div>
+                {% if form.password2.errors %}
+                <div class="alert alert-danger" role="alert">{{form.password2.errors}}</div>
+                {% endif %}
+                <div class="mb-3">
+                    <label for="confirm_register_password">Confirm User Password *</label>
+                    <input type="password" id="confirm_register_password" name="{{ form.password2.name }}"
+                           class="form-control"
+                           placeholder="Confirm User Password" required>
+                </div>
+                <hr class="mb-4">
+                <button class="btn btn-primary btn-lg btn-block" type="submit" form="register_form">
+                    Register new user
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,15 +1,32 @@
 from django.views import View
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, FormView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.http import Http404
 from django.shortcuts import get_list_or_404, get_object_or_404
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.contrib.auth.models import User, Group
+from django.contrib.auth import authenticate, login
+from .models import Category, Ad, Image
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
-from .models import *
+
+
+
+class RegisterView(FormView):
+    form_class = UserCreationForm
+    template_name = 'registration/register.html'
+
+    def form_valid(self, form):
+        form.save()
+        username = form.cleaned_data.get('username')
+        raw_password = form.cleaned_data.get('password1')
+        user = authenticate(username=username, password=raw_password)
+        login(self.request, user)
+        return redirect('index')
 
 
 class IndexView(ListView):

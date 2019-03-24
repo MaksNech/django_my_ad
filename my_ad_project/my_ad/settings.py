@@ -37,7 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'mptt',
+    'rest_framework',
+    'rest_framework_recursive',
+    'rest_framework.authtoken',
+    'rest_auth',
 
     'ads',
 ]
@@ -107,16 +112,23 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# REDIRECTS
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Kiev'
 
 USE_I18N = True
 
-USE_L10N = True
+USE_L10N = False
 
 USE_TZ = True
 
@@ -136,6 +148,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Mptt
+
 ROOT = os.path.abspath(os.path.dirname(__file__))
 
 path = lambda *args: os.path.join(ROOT, *args)
@@ -145,5 +158,23 @@ MPTT_ADMIN_LEVEL_INDENT = 20
 FEINCMS_ADMIN_MEDIA = '/static/feincms/'
 
 FEINCMS_ADMIN_MEDIA_LOCATION = path('static/feincms/')
+
+
+# DJANGO REST FRAMEWORK SETTINGS
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 5,
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ),
+}
 
 

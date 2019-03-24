@@ -1,5 +1,9 @@
 from django.db import models
 from decimal import Decimal
+from django.dispatch import receiver
+from django.conf import settings
+from rest_framework.authtoken.models import Token
+from django.db.models.signals import post_delete, post_save
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.contrib.auth.models import User
 from mptt.models import MPTTModel, TreeForeignKey
@@ -25,6 +29,8 @@ class Ad(models.Model):
     price = models.DecimalField(max_digits=9, decimal_places=2, default=Decimal('0'), blank=True)
     negotiable_price = models.BooleanField(default=False, blank=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ads')
+    users = models.ManyToManyField(User, through='UserFavouriteAd', through_fields=('ad', 'user'),
+                                   related_name='user_ad')
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
@@ -33,6 +39,18 @@ class Ad(models.Model):
 
     class Meta:
         ordering = ['-created_on']
+
+
+class UserFavouriteAd(models.Model):
+    ad = models.ForeignKey('Ad', on_delete=models.CASCADE, related_name='user_favourite_ad')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_favourite_ad')
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "Ad: {} | User: {}".format(self.ad, self.user)
+
+    class Meta:
+        ordering = ['-ad__created_on']
 
 
 class Image(models.Model):
@@ -45,3 +63,35 @@ class Image(models.Model):
 
     class Meta:
         ordering = ['-created_on']
+
+
+class ChatMessage(models.Model):
+    ad = models.ForeignKey('Ad', on_delete=models.CASCADE, related_name='messages')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='messages')
+    body = models.CharField(max_length=500)
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return "Ad: {} | Author: {}".format(self.ad, self.author)
+
+    class Meta:
+        ordering = ['created_on']
+
+
+# SIGNALS:  ############################################################################################################
+# Begin
+
+# delete img with Image model instance
+@receiver(post_delete, sender=Image)
+def image_img_delete(sender, instance, **kwargs):
+    instance.img.delete(False)
+
+
+# automatically generated Token to every rest api user
+@receiver(post_save, sender=settings.AUTH_USER_MODEL)
+def create_auth_token(sender, instance=None, created=False, **kwargs):
+    if created:
+        Token.objects.create(user=instance)
+
+# End
+########################################################################################################################
