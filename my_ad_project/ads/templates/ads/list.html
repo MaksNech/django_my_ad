@@ -64,8 +64,8 @@
             {% for obj in ads %}
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    {% if obj.img.url %}
-                    <img class="card-img-top" src="{{ obj.img.url }}" alt="Card image cap">
+                    {% if obj.image.img.url %}
+                    <img class="card-img-top" src="{{ obj.image.img.url }}" alt="Card image cap">
                     {% endif %}
                     <div class="card-body">
                         <h4 class="card-title">{{ obj.ad.title }}</h4>

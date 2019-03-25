@@ -41,8 +41,8 @@ class UserFavouriteAdAdmin(admin.ModelAdmin):
 @admin.register(Ad)
 class AdAdmin(admin.ModelAdmin):
     model = Ad
-    list_display = ('title', 'author',)
-    search_fields = ('title', 'description', 'category__name', 'author__username',)
+    list_display = ('title', 'author', 'status')
+    search_fields = ('title', 'description', 'category__name', 'author__username', 'status')
     list_filter = (
         ('category', TreeRelatedFieldListFilter),
     )

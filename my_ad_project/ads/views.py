@@ -12,8 +12,9 @@ from django.contrib.auth.models import User, Group
 from django.contrib.auth import authenticate, login
 from .models import Category, Ad, Image
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
-
-
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
+from django.views.decorators.vary import vary_on_cookie
 
 
 class RegisterView(FormView):
@@ -44,13 +45,13 @@ class IndexView(ListView):
         context['ads'] = data
         return context
 
+
 class AdListView(ListView):
     model = Ad
     template_name = 'ads/list.html'
     queryset = Ad.objects.all()
     context_object_name = 'ads'
-    paginate_by = 20
-
+    paginate_by = 18
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -65,7 +66,7 @@ class AdListView(ListView):
         data = []
         for ad in queryset:
             image = Image.objects.filter(ad=ad.id).first()
-            data.append({'ad': ad, 'img': image.img})
+            data.append({'ad': ad, 'image': image})
         context['ads'] = data
 
         paginator = Paginator(data, self.paginate_by)
@@ -74,11 +75,15 @@ class AdListView(ListView):
         context['categories'] = Category.objects.all()
         return context
 
+    @method_decorator(cache_page(60))
+    @method_decorator(vary_on_cookie)
+    def dispatch(self, *args, **kwargs):
+        return super(AdListView, self).dispatch(*args, **kwargs)
+
 
 class AdDetailView(DetailView):
     model = Ad
     template_name = 'ads/detail.html'
-
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -88,6 +93,6 @@ class AdDetailView(DetailView):
         for image in images:
             number = number + 1
             data.append({'number': number, 'img': image.img})
-            
+
         context['images'] = data
         return context

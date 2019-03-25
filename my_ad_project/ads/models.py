@@ -21,6 +21,14 @@ class Category(MPTTModel):
 
 
 class Ad(models.Model):
+    INACTIVE = 100
+    ACTIVE = 200
+    DELETED = 300
+    STATUS = (
+        (INACTIVE, 'inactive'),
+        (ACTIVE, 'active'),
+        (DELETED, 'deleted'),
+    )
     title = models.CharField(max_length=100)
     category = TreeForeignKey('Category', on_delete=models.CASCADE, related_name='ads')
     description = models.CharField(max_length=5000)
@@ -31,6 +39,10 @@ class Ad(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ads')
     users = models.ManyToManyField(User, through='UserFavouriteAd', through_fields=('ad', 'user'),
                                    related_name='user_ad')
+    status = models.IntegerField(
+        choices=STATUS,
+        default=ACTIVE,
+    )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 

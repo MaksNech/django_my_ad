@@ -7,19 +7,13 @@ from .models import Category, Ad, UserFavouriteAd, Image, ChatMessage
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username', 'email', 'groups')
+        fields = ('id', 'url', 'username', 'email', 'groups')
 
 
 class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
-        fields = ('url', 'name')
-
-
-class SubCategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        fields = ("id", "name", "parent", "children")
+        fields = ('id', 'url', 'name')
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -27,7 +21,7 @@ class CategorySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Category
-        fields = ("id", "name", "parent", "subcategories")
+        fields = ('id', 'name', 'parent', 'subcategories')
 
 
 class AdSerializer(serializers.ModelSerializer):
@@ -37,8 +31,8 @@ class AdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Ad
-        fields = ('title', 'category', 'description', 'img_count', 'price', 'negotiable_price', 'author', 'users',
-                  'created_on', 'updated_on')
+        fields = ('id', 'title', 'category', 'description', 'img_count', 'price', 'negotiable_price', 'author', 'users',
+                  'status', 'created_on', 'updated_on')
 
 
 class UserFavouriteAdSerializer(serializers.ModelSerializer):
@@ -47,7 +41,7 @@ class UserFavouriteAdSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserFavouriteAd
-        fields = ('ad', 'user', 'created_on')
+        fields = ('id', 'ad', 'user', 'created_on')
 
 
 class ImageSerializer(serializers.ModelSerializer):
@@ -55,7 +49,7 @@ class ImageSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Image
-        fields = ('img', 'ad', 'created_on')
+        fields = ('id', 'img', 'ad', 'created_on')
 
 
 class ChatMessageSerializer(serializers.ModelSerializer):

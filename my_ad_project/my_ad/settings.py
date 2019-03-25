@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'mptt',
+    'django_filters',
     'rest_framework',
+    'rest_framework_swagger',
     'rest_framework_recursive',
     'rest_framework.authtoken',
     'rest_auth',
@@ -89,6 +91,16 @@ DATABASES = {
         'PASSWORD': '123',
         'HOST': '127.0.0.1',
         'PORT': 5432
+    }
+}
+
+
+# Caches
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+        'LOCATION': '127.0.0.1:11211',
     }
 }
 
@@ -175,6 +187,31 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ),
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
 }
 
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS': {
+        'basic': {
+            'type': 'basic'
+        }
+    },
+}
+
+
+# CELERY
+
+CELERY_BROKER_URL = 'redis://localhost:6379'
+
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+
+CELERY_ACCEPT_CONTENT = ['application/json']
+
+CELERY_TASK_SERIALIZER = 'json'
+
+CELERY_RESULT_SERIALIZER = 'json'
+
+CELERY_TIMEZONE = 'Europe/Kiev'
 

@@ -10,6 +10,7 @@
       "price": "3000.00",
       "negotiable_price": false,
       "author": 3,
+      "status": 200,
       "created_on": "2019-03-22T14:04:21.512Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -25,6 +26,7 @@
       "price": "2000.00",
       "negotiable_price": false,
       "author": 2,
+      "status": 200,
       "created_on": "2019-03-22T14:05:56.085Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -40,6 +42,7 @@
       "price": "5000.00",
       "negotiable_price": false,
       "author": 3,
+      "status": 200,
       "created_on": "2019-03-22T14:07:33.684Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -55,6 +58,7 @@
       "price": "4500.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:08:45.445Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -70,6 +74,7 @@
       "price": "1600.00",
       "negotiable_price": false,
       "author": 3,
+      "status": 200,
       "created_on": "2019-03-22T14:11:12.668Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -85,6 +90,7 @@
       "price": "700.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:12:53.465Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -100,6 +106,7 @@
       "price": "8900.00",
       "negotiable_price": false,
       "author": 2,
+      "status": 200,
       "created_on": "2019-03-22T14:16:35.222Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -115,6 +122,7 @@
       "price": "13900.00",
       "negotiable_price": false,
       "author": 3,
+      "status": 200,
       "created_on": "2019-03-22T14:18:19.231Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -130,6 +138,7 @@
       "price": "5400.00",
       "negotiable_price": false,
       "author": 2,
+      "status": 200,
       "created_on": "2019-03-22T14:20:57.793Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -145,6 +154,7 @@
       "price": "8100.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:23:33.517Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -160,6 +170,7 @@
       "price": "11300.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:25:54.032Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -175,6 +186,7 @@
       "price": "12700.00",
       "negotiable_price": false,
       "author": 2,
+      "status": 200,
       "created_on": "2019-03-22T14:27:43.467Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -190,6 +202,7 @@
       "price": "500000.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:29:09.963Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -205,6 +218,7 @@
       "price": "430000.00",
       "negotiable_price": false,
       "author": 3,
+      "status": 200,
       "created_on": "2019-03-22T14:30:16.106Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -220,6 +234,7 @@
       "price": "670000.00",
       "negotiable_price": false,
       "author": 2,
+      "status": 200,
       "created_on": "2019-03-22T14:31:22.839Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -235,6 +250,7 @@
       "price": "450000.00",
       "negotiable_price": false,
       "author": 3,
+      "status": 200,
       "created_on": "2019-03-22T14:32:10.039Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -250,6 +266,7 @@
       "price": "320000.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:33:31.309Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -265,6 +282,7 @@
       "price": "150000.00",
       "negotiable_price": false,
       "author": 2,
+      "status": 200,
       "created_on": "2019-03-22T14:34:27.895Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -280,6 +298,7 @@
       "price": "330000.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:35:28.361Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -295,6 +314,7 @@
       "price": "120000.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:36:17.147Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -310,6 +330,7 @@
       "price": "230000.00",
       "negotiable_price": false,
       "author": 2,
+      "status": 200,
       "created_on": "2019-03-22T14:37:13.569Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -325,6 +346,7 @@
       "price": "268000.00",
       "negotiable_price": false,
       "author": 3,
+      "status": 200,
       "created_on": "2019-03-22T14:37:59.976Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -340,6 +362,7 @@
       "price": "80000.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:38:52.019Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -355,6 +378,7 @@
       "price": "56000.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:39:27.677Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -370,6 +394,7 @@
       "price": "14000.00",
       "negotiable_price": false,
       "author": 3,
+      "status": 200,
       "created_on": "2019-03-22T14:40:36.120Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -385,6 +410,7 @@
       "price": "12000.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:41:27.087Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -400,6 +426,7 @@
       "price": "2500.00",
       "negotiable_price": false,
       "author": 2,
+      "status": 200,
       "created_on": "2019-03-22T14:42:13.412Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -415,6 +442,7 @@
       "price": "1700.00",
       "negotiable_price": false,
       "author": 3,
+      "status": 200,
       "created_on": "2019-03-22T14:43:00.889Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -430,6 +458,7 @@
       "price": "4500.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:44:08.139Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
@@ -445,6 +474,7 @@
       "price": "4000.00",
       "negotiable_price": false,
       "author": 4,
+      "status": 200,
       "created_on": "2019-03-22T14:44:55.312Z",
       "updated_on": "2019-03-23T02:56:20.669Z"
     }
