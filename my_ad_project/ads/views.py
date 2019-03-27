@@ -1,22 +1,27 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.http import Http404
+from django.views.generic.edit import DeleteView
 from django.urls import reverse
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.contrib.auth import authenticate, login
-from .models import Category, Ad, Image
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserCreationForm
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 from django.views.decorators.vary import vary_on_cookie
-from .forms import AdCreateForm, UserFavouriteAdCreateForm, ImageCreateForm, ChatMessageCreateForm
 from django.views.generic.edit import FormView
 from django.forms import modelformset_factory
 from django.core.cache import cache
+from django.contrib.auth.decorators import login_required
 
+from .models import Category, Ad, Image
+from .forms import AdCreateForm
+
+
+def permission_denied(request):
+    name = request.session.get('permission_name')
+    return render(request, 'ads/permission_denied.html', context={'permission': name})
 
 class RegisterView(FormView):
     form_class = UserCreationForm
@@ -98,53 +103,15 @@ class AdDetailView(DetailView):
         context['images'] = data
         return context
 
-
+@login_required(login_url='/accounts/login/')
 def ad_create(request):
-
-    ImageFormset = modelformset_factory(Image, fields=('img',), extra=8, max_num=8)
-
-    if request.method == 'POST':
-        form = AdCreateForm(request.POST)
-        formset = ImageFormset(request.POST or None, request.FILES or None)
-        if form.is_valid() and formset.is_valid():
-            ad = form.save(commit=False)
-            ad.author = request.user
-            ad.save()
-
-            for f in formset:
-                try:
-                    image = Image(ad=ad, img=f.cleaned_data['img'])
-                    image.save()
-
-                except Exception as e:
-                    break
-
-            cache.clear()
-            return HttpResponseRedirect(reverse('detail', kwargs={'pk': ad.id}))
-    else:
-        form = AdCreateForm()
-        formset = ImageFormset(queryset=Image.objects.none())
-
-    context = {
-        'form': form,
-        'formset': formset,
-        'categories': Category.objects.all(),
-    }
-    return render(request, 'ads/create.html', context)
-
-
-def ad_edit(request, ad_id):
-
-    ad = Ad.objects.get(id=ad_id)
-
-    if ad:
+    if request.user.is_authenticated:
         ImageFormset = modelformset_factory(Image, fields=('img',), extra=8, max_num=8)
 
         if request.method == 'POST':
             form = AdCreateForm(request.POST)
             formset = ImageFormset(request.POST or None, request.FILES or None)
             if form.is_valid() and formset.is_valid():
-                Image.objects.filter(ad=ad_id).delete(),
                 ad = form.save(commit=False)
                 ad.author = request.user
                 ad.save()
@@ -166,10 +133,56 @@ def ad_edit(request, ad_id):
         context = {
             'form': form,
             'formset': formset,
-            'ad': ad,
             'categories': Category.objects.all(),
         }
-        return render(request, 'ads/edit.html', context)
+        return render(request, 'ads/create.html', context)
+    else:
+        request.session['permission_name'] = '"Create Ad" action. You must at first to register and then to login.'
+        return HttpResponseRedirect(reverse('permission_denied'))
+
+
+@login_required(login_url='/accounts/login/')
+def ad_edit(request, ad_id):
+
+    ad = Ad.objects.get(id=ad_id)
+    if request.user == ad.author:
+        if ad:
+            ImageFormset = modelformset_factory(Image, fields=('img',), extra=8, max_num=8)
+
+            if request.method == 'POST':
+                form = AdCreateForm(request.POST, instance=ad)
+                formset = ImageFormset(request.POST or None, request.FILES or None)
+                if form.is_valid() and formset.is_valid():
+                    Image.objects.filter(ad=ad_id).delete(),
+                    ad = form.save(commit=False)
+                    ad.author = request.user
+                    ad.save()
+
+                    for f in formset:
+                        try:
+                            image = Image(ad=ad, img=f.cleaned_data['img'])
+                            image.save()
+
+                        except Exception as e:
+                            break
+
+                    cache.clear()
+                    return HttpResponseRedirect(reverse('detail', kwargs={'pk': ad.id}))
+            else:
+                form = AdCreateForm()
+                formset = ImageFormset(queryset=Image.objects.none())
+
+            context = {
+                'form': form,
+                'formset': formset,
+                'ad': ad,
+                'categories': Category.objects.all(),
+            }
+            return render(request, 'ads/edit.html', context)
+
+    else:
+        request.session['permission_name'] = '"Edit Ad" action. Only the author of the Ad can edit it.'
+        return HttpResponseRedirect(reverse('permission_denied'))
 
 
 class AdDeleteView(DeleteView):
@@ -184,7 +197,8 @@ class AdDeleteView(DeleteView):
     def get_object(self, queryset=None):
         obj = super(AdDeleteView, self).get_object()
         if not obj.author == self.request.user:
-            raise Http404
+            self.request.session['permission_name'] = '"Delete Ad" action. Only the author of the Ad can delete it.'
+            return HttpResponseRedirect(reverse('permission_denied'))
         return obj
 
     def get_success_url(self):

@@ -65,12 +65,14 @@
                                 <a href="{% url 'detail' obj.ad.id %}"
                                    class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">
                                     <i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                {% if user.is_authenticated %}
                                 <a href="{% url 'edit' obj.ad.id %}"
                                    class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">
                                     <i class="fa fa-pencil" aria-hidden="true"></i> Edit</a>
                                 <a href=""
                                    class="btn btn-sm btn-outline-secondary" role="button" aria-pressed="true">
                                     <i class="fa fa-thumbs-up" aria-hidden="true"></i> To Favourites</a>
+                                {% endif %}
                             </div>
                         </div>
                         <hr>

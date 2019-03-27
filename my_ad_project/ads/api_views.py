@@ -150,7 +150,7 @@ class AdViewSet(viewsets.ModelViewSet):
        API endpoint that delete the ad instance.
 
     """
-    permission_classes = (IsAuthorOrReadOnly,)
+    permission_classes = (IsAuthenticatedOrReadOnly, IsAuthorOrReadOnly,)
     queryset = Ad.objects.all()
     serializer_class = AdSerializer
     filterset_class = AdFilter

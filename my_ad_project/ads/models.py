@@ -5,6 +5,7 @@ from django.conf import settings
 from rest_framework.authtoken.models import Token
 from django.db.models.signals import post_delete, post_save
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.exceptions import ValidationError
 from django.contrib.auth.models import User
 from mptt.models import MPTTModel, TreeForeignKey
 
@@ -69,6 +70,12 @@ class Image(models.Model):
     img = models.FileField(upload_to='ads/')
     ad = models.ForeignKey('Ad', on_delete=models.CASCADE, related_name='images')
     created_on = models.DateTimeField(auto_now_add=True)
+
+    def save(self, *args, **kwargs):
+        images = Image.objects.filter(ad=self.ad).count()
+        if images > 7:
+            raise ValidationError("Images")
+        return super().save(*args, **kwargs)
 
     def __str__(self):
         return "{} | {}".format(self.img, self.ad)
