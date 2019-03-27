@@ -96,6 +96,10 @@ python manage.py loaddata ads.json
 
 python manage.py loaddata images.json 
 ```
+#### Inside the project directory run app with terminal command:
+```bash
+python manage.py runserver
+```
 #### Users:
 ```bash
 Admin: 
@@ -138,4 +142,52 @@ celery -A my_ad worker -l info
 
 celery -A my_ad beat -l info
 ```
+## 6: Django REST framework:
+### Running Locally:
+#### User authentication through token-auth:
+##### Install Postman HTTP client. Inside Postman choose POST Request to:
+```bash
+http://127.0.0.1:8000/api/v1/api-token-auth/
+```
+##### with Body-raw as JSON(application/json) and put inside credentials: 
+```bash
+{"username":"admin","password":"123"}
+```
+##### and send that.
+##### Then copy generated token string from Response, choose in Postman GET Request to:
+```bash
+http://127.0.0.1:8000/api/v1/routes/<resource>
+```
+##### where "resource" is the name of db model in plural, for example "ingredients" or "dishes", then, set in 
+##### http "Authorization" header such string:
+```bash
+Token <copied generated token>
+```
+##### where "copied generated token" should be prefixed by the string literal "Token", with whitespace separating the
+##### two strings.
 
+#### User authentication through rest-auth:
+##### In browser go to the:
+```bash
+http://127.0.0.1:8000/api/v1/rest-auth/login/
+```
+##### and in the form below you can enter a password and a username of the user that is already registered. 
+##### Then you could go to the:
+```bash
+http://127.0.0.1:8000/api/v1/
+```
+##### where you can see a url list of the Api, or logout with POST request in:
+```bash
+http://127.0.0.1:8000/api/v1/rest-auth/logout/
+```
+##### Swagger:
+```bash
+http://127.0.0.1:8000/api/v1/schema/
+```
+
+## 7: Django Channels message chat:
+### Running Locally:
+#### Run Redis:
+```bash
+redis-server
+```
