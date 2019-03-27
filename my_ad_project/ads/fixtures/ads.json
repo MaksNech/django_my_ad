@@ -3,6 +3,8 @@
     "model": "ads.ad",
     "pk": 1,
     "fields": {
+      "uniq_id": "15ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "15ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Selling british kitten",
       "category": 2,
       "description": "little kitty waiting for his family",
@@ -19,6 +21,8 @@
     "model": "ads.ad",
     "pk": 2,
     "fields": {
+      "uniq_id": "16ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "16ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "British cat",
       "category": 2,
       "description": "Adult british cat \"Whisky\"",
@@ -35,6 +39,8 @@
     "model": "ads.ad",
     "pk": 3,
     "fields": {
+      "uniq_id": "17ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "17ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "I will sell Shiba Inu",
       "category": 3,
       "description": "Friend for all family",
@@ -51,6 +57,8 @@
     "model": "ads.ad",
     "pk": 4,
     "fields": {
+      "uniq_id": "18ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "18ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Labrador",
       "category": 3,
       "description": "Labrador Jordi",
@@ -67,6 +75,8 @@
     "model": "ads.ad",
     "pk": 5,
     "fields": {
+      "uniq_id": "14ecad5c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "14ecad5c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Bonny parrot",
       "category": 4,
       "description": "The best singer in the country",
@@ -83,6 +93,8 @@
     "model": "ads.ad",
     "pk": 6,
     "fields": {
+      "uniq_id": "14ecad6c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "14ecad6c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "\u0421anary",
       "category": 4,
       "description": "Bird canary for home",
@@ -99,6 +111,8 @@
     "model": "ads.ad",
     "pk": 7,
     "fields": {
+      "uniq_id": "14ecad7c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "14ecad7c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Asus VivoBook",
       "category": 6,
       "description": "HD / Intel Celeron N4000 1.1 - 2.6  / RAM 4  / HDD 500  / Intel UHD Graphics 600  / Wi-Fi / Bluetooth / Endless OS /",
@@ -115,6 +129,8 @@
     "model": "ads.ad",
     "pk": 8,
     "fields": {
+      "uniq_id": "14ecad8c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "14ecad8c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Dell Inspiron",
       "category": 6,
       "description": "WXGA HD / Intel Celeron N4000 1.1 - 2.6  / RAM 4  / HDD 500  / Intel UHD Graphics 600 / DVD\u00b1RW / Wi-Fi / Bluetooth  / Windows 10 Home /",
@@ -131,6 +147,8 @@
     "model": "ads.ad",
     "pk": 9,
     "fields": {
+      "uniq_id": "14ecad9c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "14ecad9c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Xiaomi Redmi Note 5",
       "category": 7,
       "description": "5.99\", IPS, 2160x1080/ Qualcomm Snapdragon 636 1.8 / Cam 12 + 13 Mp/ RAM 4 /  microSD / 3G/ LTE/ GPS/ GLONASS/ 2\u0445 SIM (Nano-SIM)/ Android 8.1 Oreo/",
@@ -147,6 +165,8 @@
     "model": "ads.ad",
     "pk": 10,
     "fields": {
+      "uniq_id": "24ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "24ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Samsung Galaxy",
       "category": 7,
       "description": "6.4\", Super AMOLED, 2340x1080 / Samsung Exynos 7904 2x1.8  + 6x1.6 / Cam 16 + 16 Mp/ RAM 3 /  microSD / 3G/ LTE/ GPS/  2\u0445 SIM (Nano-SIM)/ Android 9.0 /",
@@ -163,6 +183,8 @@
     "model": "ads.ad",
     "pk": 11,
     "fields": {
+      "uniq_id": "34ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "34ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "fridge Side-by-Side SKYWORTH",
       "category": 8,
       "description": "181 \u0445 91 \u0445 66 sm; 86 kg",
@@ -179,6 +201,8 @@
     "model": "ads.ad",
     "pk": 12,
     "fields": {
+      "uniq_id": "44ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "44ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "microwave SAMSUNG",
       "category": 8,
       "description": "900 Vt; 31 x 51.7 x 47.56 \u0441\u043c",
@@ -195,6 +219,8 @@
     "model": "ads.ad",
     "pk": 13,
     "fields": {
+      "uniq_id": "54ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "54ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Land Plot James street",
       "category": 10,
       "description": "100x100 sq m.",
@@ -211,6 +237,8 @@
     "model": "ads.ad",
     "pk": 14,
     "fields": {
+      "uniq_id": "64ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "64ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Land Plot Winner street",
       "category": 10,
       "description": "300 x 40 sq m",
@@ -227,6 +255,8 @@
     "model": "ads.ad",
     "pk": 15,
     "fields": {
+      "uniq_id": "74ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "74ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "House Lambert street",
       "category": 11,
       "description": "500 sq m, 7 rooms",
@@ -243,6 +273,8 @@
     "model": "ads.ad",
     "pk": 16,
     "fields": {
+      "uniq_id": "84ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "84ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "House Kleenwood street",
       "category": 11,
       "description": "300 sq m, 5 rooms",
@@ -259,6 +291,8 @@
     "model": "ads.ad",
     "pk": 17,
     "fields": {
+      "uniq_id": "94ecad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "94ecad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Apartments Melrouse street",
       "category": 12,
       "description": "80 sq m, 3 rooms",
@@ -275,6 +309,8 @@
     "model": "ads.ad",
     "pk": 18,
     "fields": {
+      "uniq_id": "142cad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "142cad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Apartments Enlishband street",
       "category": 12,
       "description": "120 sq m, 4 rooms",
@@ -291,6 +327,8 @@
     "model": "ads.ad",
     "pk": 19,
     "fields": {
+      "uniq_id": "143cad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "143cad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Volvo",
       "category": 14,
       "description": "2016 year, 400 hp",
@@ -307,6 +345,8 @@
     "model": "ads.ad",
     "pk": 20,
     "fields": {
+      "uniq_id": "144cad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "144cad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Kamaz",
       "category": 14,
       "description": "2012 year, 350 h.p.",
@@ -323,6 +363,8 @@
     "model": "ads.ad",
     "pk": 21,
     "fields": {
+      "uniq_id": "145cad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "145cad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Bmw m5",
       "category": 15,
       "description": "2016 year, 400 hp",
@@ -339,6 +381,8 @@
     "model": "ads.ad",
     "pk": 22,
     "fields": {
+      "uniq_id": "146cad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "146cad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Lexus",
       "category": 15,
       "description": "2017 year 320 hp",
@@ -355,6 +399,8 @@
     "model": "ads.ad",
     "pk": 23,
     "fields": {
+      "uniq_id": "147cad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "147cad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Suzuki",
       "category": 16,
       "description": "2019 year, 190 hp",
@@ -371,6 +417,8 @@
     "model": "ads.ad",
     "pk": 24,
     "fields": {
+      "uniq_id": "148cad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "148cad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Honda",
       "category": 16,
       "description": "2015 year, 220 hp",
@@ -387,6 +435,8 @@
     "model": "ads.ad",
     "pk": 25,
     "fields": {
+      "uniq_id": "149cad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "149cad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Bicycle new",
       "category": 18,
       "description": "2019 year, 9 speeds",
@@ -403,6 +453,8 @@
     "model": "ads.ad",
     "pk": 26,
     "fields": {
+      "uniq_id": "14e1ad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "14e1ad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Sale bicycle",
       "category": 18,
       "description": "Best bicycle for ever 2018",
@@ -419,6 +471,8 @@
     "model": "ads.ad",
     "pk": 27,
     "fields": {
+      "uniq_id": "14e2ad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "14e2ad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Adidas suit",
       "category": 19,
       "description": "model 2019",
@@ -435,6 +489,8 @@
     "model": "ads.ad",
     "pk": 28,
     "fields": {
+      "uniq_id": "14e3ad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "14e3ad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Reebok shoes",
       "category": 19,
       "description": "model 2018",
@@ -451,6 +507,8 @@
     "model": "ads.ad",
     "pk": 29,
     "fields": {
+      "uniq_id": "14e4ad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "14e4ad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "Fishing rod",
       "category": 20,
       "description": "model 2018",
@@ -467,6 +525,8 @@
     "model": "ads.ad",
     "pk": 30,
     "fields": {
+      "uniq_id": "14e5ad3c-50c0-11e9-bcd7-3052cb20c43b",
+      "slug": "14e5ad3c-50c0-11e9-bcd7-3052cb20c43b",
       "title": "New fishing rod",
       "category": 20,
       "description": "model 2019",

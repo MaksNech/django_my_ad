@@ -1,7 +1,9 @@
+import uuid
 from django.db import models
 from decimal import Decimal
 from django.dispatch import receiver
 from django.conf import settings
+from django.template.defaultfilters import slugify
 from rest_framework.authtoken.models import Token
 from django.db.models.signals import post_delete, post_save
 from django.core.validators import MaxValueValidator, MinValueValidator
@@ -30,6 +32,8 @@ class Ad(models.Model):
         (ACTIVE, 'active'),
         (DELETED, 'deleted'),
     )
+    uniq_id = models.UUIDField(default=uuid.uuid1, editable=False)
+    slug = models.SlugField(unique=True)
     title = models.CharField(max_length=100)
     category = TreeForeignKey('Category', on_delete=models.CASCADE, related_name='ads')
     description = models.CharField(max_length=5000)
@@ -46,6 +50,10 @@ class Ad(models.Model):
     )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.uniq_id)
+        super(Ad, self).save(*args, **kwargs)
 
     def __str__(self):
         return "{} | {} | {}".format(self.title, self.author, self.created_on)

@@ -4,6 +4,9 @@
 {% block content %}
 
 {% if ad %}
+
+<input type="hidden" id="user_token" value="{{token}}">
+
 <div class="album py-5 bg-light">
     <div class="container">
         <div class="row justify-content-center">
@@ -73,6 +76,53 @@
                     </span></h3>
                 </div>
             </div>
+
+            <div class="col-md-12 col-xs-8 col-centered">
+                <hr class="mb-4">
+                {% if user.is_authenticated %}
+
+
+                <h3 class="mb-3">To chat with author:</h3>
+                <form class="needs-validation" name="message_add_form" id="message_add_form" action=""
+                      method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <input type='hidden' id='hidden_input' value="{{ user.id }}" data-post='{{ ad.slug }}'>
+                    <div class="mb-3">
+                        <label for="comment_body">Enter your message here:</label>
+                        <textarea required class="form-control" name="comment_body" id="comment_body"
+                                  rows="3" form="message_add_form"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <button id="add_comment_btn" class="btn btn-primary btn-lg btn-block" type="submit"
+                                form="message_add_form">
+                            Send Message
+                        </button>
+                    </div>
+
+                </form>
+                <hr class="mb-4">
+                {% endif %}
+
+                <h3 class="mb-3">Messages:</h3>
+                {% if messages %}
+                {% for message in messages %}
+                <div class='mb-3'>
+                    <p>{{ message.body }}</p>
+                    <small>Author: {{ message.author.username }}</small>
+                    <br>
+                    <small>{{ message.created_on|date:"Y-m-d H:i:s" }}</small>
+                    <hr>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>There are no messages yet.</p>
+                {% endif %}
+                <div class='mb-3' id='messages'>
+                    <!--div for add comment-->
+                </div>
+
+            </div>
+
         </div>
     </div>
 </div>
