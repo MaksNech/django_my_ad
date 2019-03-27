@@ -27,11 +27,13 @@ class CategorySerializer(serializers.ModelSerializer):
 class AdSerializer(serializers.ModelSerializer):
     users = UserSerializer(many=True, read_only=True)
     author = UserSerializer(read_only=True)
+    uniq_id = serializers.ReadOnlyField()
+    slug = serializers.ReadOnlyField()
     category = serializers.PrimaryKeyRelatedField(queryset=Category.objects.all(), allow_null=False, required=True)
 
     class Meta:
         model = Ad
-        fields = ('id', 'title', 'category', 'description', 'img_count', 'price', 'negotiable_price', 'author', 'users',
+        fields = ('id', 'uniq_id', 'slug', 'title', 'category', 'description', 'img_count', 'price', 'negotiable_price', 'author', 'users',
                   'status', 'created_on', 'updated_on')
 
 

@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
 from django.views.generic.edit import DeleteView
 from django.urls import reverse
 from django.core.paginator import Paginator
@@ -14,14 +14,16 @@ from django.views.generic.edit import FormView
 from django.forms import modelformset_factory
 from django.core.cache import cache
 from django.contrib.auth.decorators import login_required
+from rest_framework.authtoken.models import Token
 
-from .models import Category, Ad, Image
-from .forms import AdCreateForm
+from .models import Category, Ad, Image, ChatMessage
+from .forms import AdCreateForm, ChatMessageCreateForm
 
 
 def permission_denied(request):
     name = request.session.get('permission_name')
     return render(request, 'ads/permission_denied.html', context={'permission': name})
+
 
 class RegisterView(FormView):
     form_class = UserCreationForm
@@ -87,21 +89,28 @@ class AdListView(ListView):
         return super(AdListView, self).dispatch(*args, **kwargs)
 
 
-class AdDetailView(DetailView):
-    model = Ad
-    template_name = 'ads/detail.html'
+def ad_detail(request, ad_slug):
+    ad = Ad.objects.get(slug=ad_slug)
+    form = ChatMessageCreateForm(request.POST, request.FILES)
+    messages = ChatMessage.objects.filter(ad=ad)
+    images = Image.objects.filter(ad=ad)
+    data = []
+    number = -1
+    for image in images:
+        number = number + 1
+        data.append({'number': number, 'image': image})
+    images = data
+    if ad:
+        token = ''
+        if request.user.is_authenticated:
+            token, created = Token.objects.get_or_create(user=request.user)
+        return render(request, 'ads/detail.html', context={
+            'ad': ad,
+            'images': images,
+            'form': form,
+            'messages': messages,
+            'token': token})
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        images = Image.objects.filter(ad=self.kwargs['pk'])
-        data = []
-        number = -1
-        for image in images:
-            number = number + 1
-            data.append({'number': number, 'image': image})
-
-        context['images'] = data
-        return context
 
 @login_required(login_url='/accounts/login/')
 def ad_create(request):
@@ -143,7 +152,6 @@ def ad_create(request):
 
 @login_required(login_url='/accounts/login/')
 def ad_edit(request, ad_id):
-
     ad = Ad.objects.get(id=ad_id)
     if request.user == ad.author:
         if ad:
@@ -204,4 +212,3 @@ class AdDeleteView(DeleteView):
     def get_success_url(self):
         cache.clear()
         return reverse('list')
-
