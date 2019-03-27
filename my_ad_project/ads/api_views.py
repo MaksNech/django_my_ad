@@ -12,6 +12,7 @@ from .models import Category, Ad, UserFavouriteAd, Image, ChatMessage
 from .permissions import IsAuthorOrReadOnly
 
 
+
 class UserFilter(filters.FilterSet):
     class Meta:
         model = User

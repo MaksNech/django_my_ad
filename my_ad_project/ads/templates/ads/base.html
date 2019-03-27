@@ -48,7 +48,6 @@
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
@@ -78,7 +77,6 @@
                 <a class="nav-link" href="{% url 'index' %}">
                     <i class="fa fa-home" aria-hidden="true"></i> Home</a>
             </li>
-
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="ad_dropdown" data-toggle="dropdown"
                    aria-haspopup="true"
@@ -86,14 +84,12 @@
                 <div class="dropdown-menu" aria-labelledby="ad_dropdown">
                     <a class="dropdown-item" href="{% url 'list' %}">
                         <i class="fa fa-th-list" aria-hidden="true"></i> List all</a>
-                    <a class="dropdown-item" href="">
+                    <a class="dropdown-item" href="{% url 'create' %}">
                         <i class="fa fa-plus" aria-hidden="true"></i> Add new</a>
                 </div>
             </li>
-
         </ul>
         {% block search %}{% endblock %}
-
     </div>
 </nav>
 
@@ -115,6 +111,8 @@
 </footer>
 
 </body>
+<!-- Custom JavaScript for this template -->
+<script src="{% static 'ads/js/ads.js' %}"></script>
 
 </html>
 

@@ -1,0 +1,143 @@
+{% extends "ads/base.html" %}
+{% block title %}Ads-Edit{% endblock %}
+{% block content %}
+
+
+<div class="container">
+
+    <div class="py-5 text-center">
+        <h2>Ad Edit Form</h2>
+        <p class="lead">Below is a form in which you can edit the Ad.</p>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-xs-12 col-centered">
+            <hr class="mb-4">
+            <h4 class="mb-3">Ad details:</h4>
+            <p class="text-muted">Required Field *</p>
+            <form class="needs-validation" id="ad_update_form" action="{% url 'edit' ad.id %}"
+                  method="post" enctype="multipart/form-data">{% csrf_token %}
+            </form>
+            <form class="needs-validation" id="ad_delete_form" action="{% url 'delete' ad.id %}"
+                  method="post" enctype="multipart/form-data">{% csrf_token %}
+            </form>
+            <input form="ad_update_form" type="hidden" name="form-TOTAL_FORMS" value="8" id="id_form-TOTAL_FORMS">
+            <input form="ad_update_form" type="hidden" name="form-INITIAL_FORMS" value="0" id="id_form-INITIAL_FORMS">
+            <input form="ad_update_form" type="hidden" name="form-MIN_NUM_FORMS" value="0" id="id_form-MIN_NUM_FORMS">
+            <input form="ad_update_form" type="hidden" name="form-MAX_NUM_FORMS" value="8" id="id_form-MAX_NUM_FORMS">
+            <div class="mb-3">
+                <label for="{{ form.title.id }}">Ad Title *</label>
+                <input required type="text" class="form-control" name="{{ form.title.name }}"
+                       id="{{ form.title.id }}"
+                       placeholder="Ad Title"
+                       form="ad_update_form"
+                       value="{{ad.title}}">
+            </div>
+            <div class="row align-items-end ad-image-count" id="ad_image_add_div_0">
+                <div class="col-md-12 mb-4">
+                    <label for="id_form-0-img">Ad Image *</label>
+                    <div class="custom-file">
+                        <input type="file" accept="image/*" class="custom-file-input"
+                               name="form-0-img"
+                               id="id_form-0-img" form="ad_update_form">
+                        <label class="custom-file-label" for="id_form-0-img">Choose Image</label>
+                    </div>
+                </div>
+                <input type="hidden" id="id_form-0-id" name="form-0-id"
+                       form="ad_update_form">
+            </div>
+            <div class="list-group" id="images_list_div">
+                <!--div for selected images-->
+            </div>
+            <div class="mb-3">
+                <div class="d-flex justify-content-around">
+                    <button type="submit" id="ad_image_submit_btn" class="btn btn-primary">
+                        <i class="fa fa-plus-circle" aria-hidden="true"></i> Image
+                    </button>
+                    <button type="submit" id="remove_image_submit_btn" class="btn btn-primary">
+                        <i class="fa fa-minus-circle" aria-hidden="true"></i> Image
+                    </button>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="{{ form.description.id }}">Ad Description *</label>
+                <textarea required class="form-control" name="{{ form.description.name }}"
+                          id="{{ form.description.id }}"
+                          rows="3" form="ad_update_form">{{ad.description}}</textarea>
+            </div>
+            <div class="mb-3">
+                <label class="mr-sm-2" for="{{ form.category.id }}">Category *</label>
+                <select required class="custom-select mr-sm-2" name="{{ form.category.name }}"
+                        id="{{ form.category.id }}"
+                        form="ad_update_form">
+                    <option selected disabled value="">Choose ad category...</option>
+                    {% if categories %}
+                    {% for category in categories %}
+                    {% if ad.category.id == category.id %}
+                    <option selected value="{{ category.id }}">{{ category.name }}</option>
+                    {% else %}
+                    <option value="{{ category.id }}">{{ category.name }}</option>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </select>
+            </div>
+            <div class="row align-items-end">
+                <div class="col-md-4 mb-4">
+                    <label for="{{ form.price.id }}">Price</label>
+                    <input required type="number" min="0" max="99999999" step="0.05" class="form-control"
+                           id="{{ form.price.id }}" value="{{ad.price}}" name="{{ form.price.name }}"
+                           placeholder="Price"
+                           form="ad_update_form">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <label for="{{ form.negotiable_price.id }}">Negotiable Price <span
+                            class="text-muted">(Optional)</span></label>
+                    <input type="radio" class="form-control" id="{{ form.negotiable_price.id }}"
+                           value="{{ad.negotiable_price}}" name="{{ form.negotiable_price.name }}"
+                           placeholder="Negotiable Price"
+                           form="ad_update_form">
+                </div>
+            </div>
+            <hr class="mb-4">
+            <div class="row mb-3">
+                <div class="col-md-6 mb-4">
+                    <button id="update_ad_btn" class="btn btn-primary btn-lg btn-block" type="submit"
+                            form="ad_update_form">
+                        Save changes
+                    </button>
+                    </div>
+                 <div class="col-md-6 mb-4">
+                    <!-- Button trigger modal -->
+                    <button class="btn btn-danger btn-lg btn-block" data-toggle="modal"
+                            data-target="#exampleModalCenter">
+                        Delete Ad
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Confirm Deletion</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this Ad?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No, close</button>
+                <button type="submit" class="btn btn-primary" form="ad_delete_form">Yes, delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

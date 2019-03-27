@@ -4,7 +4,6 @@
 {% block content %}
 
 {% if ad %}
-{% if images %}
 <div class="album py-5 bg-light">
     <div class="container">
         <div class="row justify-content-center">
@@ -12,6 +11,7 @@
                 <div class="blog-main">
                     <h3 class="pb-3 mb-4 font-italic border-bottom">{{ ad.title }}</h3>
                     <div class="blog-post">
+                        {% if images %}
                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
                                 {% for obj in images %}
@@ -36,8 +36,8 @@
                                                 <div class="card-deck">
                                                     <!--/.img-->
                                                     <div class="card text-white bg-secondary border-light">
-                                                        {% if obj.img.url %}
-                                                        <img class="card-img-top" src="{{ obj.img.url }}"
+                                                        {% if obj.image.img.url %}
+                                                        <img class="card-img-top" src="{{ obj.image.img.url }}"
                                                              alt="Card image cap">
                                                         {% endif %}
                                                     </div>
@@ -61,17 +61,21 @@
                                 </div>
                             </div>
                         </div>
+                        {% endif %}
                     </div>
                     <h3 class="blog-post-title"> Ad info:</h3>
+                    <p class="blog-post-meta">{{ ad.category.name }}</p>
                     <p class="blog-post-meta">{{ ad.created_on }} by <a href="#">{{ ad.author }}</a></p>
+                    <span class="blog-post-meta" style="white-space: pre-line">{{ ad.description }}</span>
                     <hr>
-                    <h3>Price: {{ad.price}} <span class="text-muted">(UAH)</span></h3>
+                    <h3>Price: {{ad.price}} <span class="text-muted">
+                        (UAH){% if ad.negotiable_price is True %} (Negotiable){% endif %}
+                    </span></h3>
                 </div>
             </div>
         </div>
     </div>
 </div>
-{% endif %}
 
 {% else %}
 <p>Ad is not found.</p>
