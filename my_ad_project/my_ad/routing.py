@@ -10,7 +10,7 @@ application = ProtocolTypeRouter({
         TokenAuthMiddlewareStack(
             URLRouter(
                 [
-                    path('ads/<slug:ad_slug>/', MessageAddConsumer),
+                    path('ads/<slug:ad_slug>', MessageAddConsumer),
                 ]
             )
         )

@@ -134,7 +134,7 @@ def ad_create(request):
                         break
 
                 cache.clear()
-                return HttpResponseRedirect(reverse('detail', kwargs={'pk': ad.id}))
+                return HttpResponseRedirect(reverse('detail', kwargs={'ad_slug': ad.slug}))
         else:
             form = AdCreateForm()
             formset = ImageFormset(queryset=Image.objects.none())
@@ -175,7 +175,7 @@ def ad_edit(request, ad_id):
                             break
 
                     cache.clear()
-                    return HttpResponseRedirect(reverse('detail', kwargs={'pk': ad.id}))
+                    return HttpResponseRedirect(reverse('detail', kwargs={'ad_slug': ad.slug}))
             else:
                 form = AdCreateForm()
                 formset = ImageFormset(queryset=Image.objects.none())
