@@ -22,7 +22,7 @@ django-js-asset==1.2.2
 django-mptt==0.9.1
 django-rest-auth==0.9.3
 django-rest-swagger==2.2.0
-djangorestframework==3.9.2
+djangorestframework==3.11.2
 djangorestframework-recursive==0.1.2
 drf-cached-instances==0.3.4
 hyperlink==18.0.0
