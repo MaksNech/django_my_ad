@@ -38,7 +38,7 @@ psycopg2==2.7.7
 PyHamcrest==1.9.0
 python-memcached==1.59
 pytz==2018.9
-PyYAML==5.1
+PyYAML==5.4
 redis==3.2.0
 requests==2.21.0
 simplejson==3.16.0
